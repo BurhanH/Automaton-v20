@@ -5,3 +5,28 @@ Automation testing framework (API) - an example. Based on Java, REST assured, JU
 ![Java CI with Maven](https://github.com/BurhanH/Automaton-v20/workflows/Java%20CI%20with%20Maven/badge.svg?branch=master)
 [![Build Status](https://travis-ci.org/BurhanH/Automaton-v20.svg?branch=master)](https://travis-ci.org/BurhanH/Automaton-v20)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/f0008f8bec6048a6a3ca0859d22d810b)](https://www.codacy.com/manual/BurhanH/Automaton-v20?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=BurhanH/Automaton-v20&amp;utm_campaign=Badge_Grade)
+
+## Requirements
+JDK 11, Junit 4.12, REST Assured 4.3.0, <br>
+Maven (software project management) <br>
+
+## Project structure
+```text
+-- automaton-v20
+   |-- .gitignore
+   |-- .travis.yml
+   `-- .github
+       `-- workflows
+          |-- maven.yml
+   |-- LICENSE
+   |-- pom.xml
+   |-- README.md
+   `-- src
+       `-- test
+           `-- java
+               `-- restapitests
+                  |-- RestApiTests.java
+```
+
+## The concept
+The main reason was to understand how to use [REST assured](http://rest-assured.io/) to test and verify REST API. For target service, I used one of [my project](https://github.com/BurhanH/api-app-3) which is living on [https://api-flask-baur.herokuapp.com](https://api-flask-baur.herokuapp.com). It's a simple API service to get popular quotes.
