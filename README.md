@@ -29,4 +29,4 @@ Maven (software project management) <br>
 ```
 
 ## The concept
-The main reason was to understand how to use [REST assured](http://rest-assured.io/) to test and verify REST API. For target service, I used one of [my project](https://github.com/BurhanH/api-app-3) which is living on [https://api-flask-baur.herokuapp.com](https://api-flask-baur.herokuapp.com). It's a simple API service to get popular quotes.
+The main reason was to understand how to use [REST assured](http://rest-assured.io/) to test and verify REST API. For target service, I used one of [my project](https://github.com/BurhanH/api-app-3) which is living on [https://api-flask-baur.herokuapp.com](https://api-flask-baur.herokuapp.com). It's a simple REST API service to get popular quotes.
