@@ -1,3 +1,5 @@
+package RestApiTests;
+
 import io.restassured.http.ContentType;
 import org.junit.Test;
 
