@@ -29,7 +29,7 @@ Maven (software project management) <br>
 ```
 
 ## The concept
-The main reason was to understand how to use [REST assured](http://rest-assured.io/) to test and verify REST API. For target service, I used one of [my project](https://github.com/BurhanH/api-app-3) which is living on [https://api-flask-baur.herokuapp.com](https://api-flask-baur.herokuapp.com). It's a simple REST API service to get popular quotes.
+The main reason was to understand how to use [REST assured](http://rest-assured.io/) to test and verify a REST API. For a target service, I used one of [my projects](https://github.com/BurhanH/api-app-3) which is living on [https://api-flask-baur.herokuapp.com](https://api-flask-baur.herokuapp.com). It's a simple REST API service to get popular quotes.
 
 ## Tests
 [Tests](https://github.com/BurhanH/Automaton-v20/blob/master/src/test/java/restapitests/RestApiTests%2Cjava) are pretty straight. Each test verifies specific functionality like: get a quote, get a random quote, try to get a quote that doesn't exist, try to create a quote if a quote number already exists, edit a quote, create a quote, delete a quote.
