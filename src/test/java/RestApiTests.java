@@ -17,7 +17,7 @@ public class RestApiTests {
                 and().
                 contentType(ContentType.JSON).
                 and().
-                header("Content-Length", equalTo("107"));
+                header("Content-Length", equalTo("108"));
     }
 
     @Test
