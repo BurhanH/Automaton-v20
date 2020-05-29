@@ -18,7 +18,6 @@ public class RestApiTests {
 
     @Test
     public void testResponseQuote1() {
-
         given().
                 when().
                 get("/{id}", 1).
