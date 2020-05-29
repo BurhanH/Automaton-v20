@@ -1,6 +1,7 @@
 package restapitests;
 
 import io.restassured.http.ContentType;
+import org.junit.Before;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.*;
@@ -8,11 +9,18 @@ import static org.hamcrest.Matchers.*;
 
 public class RestApiTests {
 
+    @Before
+    public void setUp() {
+        baseURI = "https://api-flask-baur.herokuapp.com";
+        port = 443;
+        basePath = "/api/v1/quotes";
+    }
+
     @Test
     public void testResponseQuote1() {
         given().
                 when().
-                get("https://api-flask-baur.herokuapp.com/api/v1/quotes/1").
+                get("/{id}", 1).
                 then().
                 assertThat().
                 statusCode(200).
@@ -26,7 +34,7 @@ public class RestApiTests {
     public void testResponseRandomQuote() {
         given().
                 when().
-                get("https://api-flask-baur.herokuapp.com/api/v1/quotes").
+                get().
                 then().
                 assertThat().
                 statusCode(200).
@@ -38,7 +46,7 @@ public class RestApiTests {
     public void testResponseQuote9999NotFound() {
         given().
                 when().
-                get("https://api-flask-baur.herokuapp.com/api/v1/quotes/9999").
+                get("/{id}", 9999).
                 then().
                 assertThat().
                 statusCode(404).
@@ -50,7 +58,7 @@ public class RestApiTests {
     public void testResponseQuote9() {
         given().
                 when().
-                get("https://api-flask-baur.herokuapp.com/api/v1/quotes/9").
+                get("/{id}", 9).
                 then().
                 assertThat().
                 body("quote_id", equalTo(9)).
@@ -67,7 +75,7 @@ public class RestApiTests {
                 param("author", "Anonymous").
                 param("quote", "Dummy quote.").
                 when().
-                post("https://api-flask-baur.herokuapp.com/api/v1/quotes/11").
+                post("/{id}", 11).
                 then().
                 assertThat().
                 statusCode(400);
@@ -79,7 +87,8 @@ public class RestApiTests {
                 param("quote_id", 7).
                 param("author", "Anonymous").
                 param("quote", "There are no words.").
-                when().put("https://api-flask-baur.herokuapp.com/api/v1/quotes/7").
+                when().
+                put("/{id}", 7).
                 then().
                 assertThat().
                 statusCode(200);
@@ -92,7 +101,7 @@ public class RestApiTests {
                 param("author", "Friedrich Nietzsche, Twilight of the Idols").
                 param("quote", "Without music, life would be a mistake.").
                 when().
-                post("https://api-flask-baur.herokuapp.com/api/v1/quotes/100").
+                post("/{id}", 100).
                 then().
                 assertThat().
                 statusCode(201);
@@ -102,7 +111,7 @@ public class RestApiTests {
     public void testResponseDeleteQuote100() {
         given().
                 when().
-                delete("https://api-flask-baur.herokuapp.com/api/v1/quotes/100").
+                delete("/{id}", 100).
                 then().
                 assertThat().
                 statusCode(200);
