@@ -9,7 +9,7 @@ import static org.hamcrest.Matchers.*;
 public class RestApiTests {
 
     @Test
-    public void test_ResponseQuote1() {
+    public void testResponseQuote1() {
         given().
                 when().
                 get("https://api-flask-baur.herokuapp.com/api/v1/quotes/1").
@@ -23,7 +23,7 @@ public class RestApiTests {
     }
 
     @Test
-    public void test_ResponseRandomQuote() {
+    public void testResponseRandomQuote() {
         given().
                 when().
                 get("https://api-flask-baur.herokuapp.com/api/v1/quotes").
@@ -35,7 +35,7 @@ public class RestApiTests {
     }
 
     @Test
-    public void test_ResponseQuote9999NotFound() {
+    public void testResponseQuote9999NotFound() {
         given().
                 when().
                 get("https://api-flask-baur.herokuapp.com/api/v1/quotes/9999").
@@ -47,7 +47,7 @@ public class RestApiTests {
     }
 
     @Test
-    public void test_ResponseQuote9() {
+    public void testResponseQuote9() {
         given().
                 when().
                 get("https://api-flask-baur.herokuapp.com/api/v1/quotes/9").
@@ -61,7 +61,7 @@ public class RestApiTests {
     }
 
     @Test
-    public void test_ResponseUnableToCreateQuote11() {
+    public void testResponseUnableToCreateQuote11() {
         given().
                 param("quote_id", 11).
                 param("author", "Anonymous").
@@ -74,7 +74,7 @@ public class RestApiTests {
     }
 
     @Test
-    public void test_ResponseEditQuote7() {
+    public void testResponseEditQuote7() {
         given().
                 param("quote_id", 7).
                 param("author", "Anonymous").
@@ -86,7 +86,7 @@ public class RestApiTests {
     }
 
     @Test
-    public void test_ResponseCreateQuote100() {
+    public void testResponseCreateQuote100() {
         given().
                 param("quote_id", 100).
                 param("author", "Friedrich Nietzsche, Twilight of the Idols").
@@ -99,7 +99,7 @@ public class RestApiTests {
     }
 
     @Test
-    public void test_ResponseDeleteQuote100() {
+    public void testResponseDeleteQuote100() {
         given().
                 when().
                 delete("https://api-flask-baur.herokuapp.com/api/v1/quotes/100").
