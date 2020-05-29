@@ -10,7 +10,7 @@ import static org.hamcrest.Matchers.*;
 public class RestApiTests {
 
     @Before
-    public void setup() {
+    public void setUp() {
         baseURI = "https://api-flask-baur.herokuapp.com";
         port = 443;
         basePath = "/api/v1/quotes";
